@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'twitter'
+gem 'nokogiri'
+gem 'sqlite3'
 gem 'clockwork'
-
 group :test do
   gem 'rspec'
 end
