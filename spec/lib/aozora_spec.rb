@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'aozora'
 
 describe Aozora do
   it "can fetch from url" do
