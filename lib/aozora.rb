@@ -9,6 +9,16 @@ class Aozora
   def fetch
     document = Nokogiri::HTML(open(@url))
     data = document.css("div.main_text")
-    data.inner_html.encode("UTF-8")
+    convert data.text
+  end
+
+  def part(num, charactor = 140)
+    fetch[num*charactor...(num+1)*charactor]
+  end
+
+  private
+  def convert(data)
+    data.gsub!(/(\r\n|\r|\n| |　)/,"")
+    data.gsub!(/\（.*?\）/,"")
   end
 end
