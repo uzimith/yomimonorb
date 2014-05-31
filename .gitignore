@@ -62,3 +62,7 @@ build/
 debug.yaml
 
 /debug.rb
+/db/database.log
+/database.db
+/database_test.db
+/bot.yml

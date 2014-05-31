@@ -1,6 +1,6 @@
 require 'factory_girl'
 require 'active_record'
-require 'debugger'
+require 'byebug'
 require 'awesome_print'
 require 'database_cleaner'
 require 'yaml'
@@ -16,6 +16,10 @@ FactoryGirl.find_definitions
  
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+
+  config.filter_run :focus => true
+  config.run_all_when_everything_filtered = true
+
   config.before :all do
     config = YAML.load_file 'config.yml'
     ActiveRecord::Base.establish_connection config['database'][ENV['ENV']]
