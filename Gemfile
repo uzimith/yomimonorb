@@ -4,14 +4,18 @@ gem 'twitter'
 gem 'nokogiri'
 gem 'clockwork'
 gem "factory_girl"
-gem "sqlite3"
 gem "activerecord"
+
+group :production do
+  gem 'pg'
+end
 
 group :development do
   gem "byebug"
   gem "awesome_print"
   gem "terminal-notifier-guard"
   gem 'pry'
+  gem "sqlite3"
 end
 
 group :test do

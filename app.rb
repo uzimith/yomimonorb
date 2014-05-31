@@ -6,13 +6,13 @@ require_relative "lib/user"
 # require 'awesome_print'
 # require "byebug"
 
-## twitter
 unless ENV['Heroku']
   require_relative "debug"
+  ENV["ENV"] ||= 'development'
 end
 
 ## database
-ENV["ENV"] ||= 'development'
+ENV["ENV"] ||= 'default'
 config = YAML.load_file 'config.yml'
 ActiveRecord::Base.establish_connection config['database'][ENV['ENV']]
 
