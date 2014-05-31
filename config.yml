@@ -5,7 +5,5 @@ database:
   test:
     adapter: sqlite3
     database: database_test.db
-  dafault:
-    adapter: postgresql
-    encoding: unicode
-    pool: 5
+  dafault: ENV['HEROKU_POSTGRESQL_PINK_URL']
+
